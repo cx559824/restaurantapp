@@ -41,7 +41,7 @@ const Header = () => {
 
         <div className="flex items-center gap-8">
           <ul className="flex items-center gap-8">
-            <li className="text-base text-headingColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
+            <li className="text-base text-headingColor   cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
               Home
             </li>
             <li className="text-base text-headingColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out">
