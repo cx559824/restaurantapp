@@ -1,5 +1,5 @@
 import React from "react";
-import { MdShoppingBasket } from "react-icons/md";
+import { MdShoppingBasket, MdAdd, MdLogout } from "react-icons/md";
 import { motion } from "framer-motion";
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
@@ -70,9 +70,9 @@ const Header = () => {
               className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-2xl cursor-pointer rounded-full"
               onClick={login}
             />
-            <div className="w-40 bg-gray-50 shadow-xl rounded-lg absolute flex flex-col px-4 py-2 top-2 right-12">
-              <p>New Item</p>
-              <p>Logout</p>
+            <div className="w-40 bg-gray-50 shadow-xl rounded-lg absolute flex flex-col top-12 right-0">
+              <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base">New Item<MdAdd /></p>
+              <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base">Logout<MdLogout /></p>
             </div>
           </div>
         </div>
