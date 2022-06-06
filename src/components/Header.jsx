@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdShoppingBasket, MdAdd, MdLogout } from "react-icons/md";
 import { motion } from "framer-motion";
 
@@ -16,6 +16,8 @@ const Header = () => {
   const provider = new GoogleAuthProvider();
 
   const [{ user }, dispatch] = useStateValue();
+
+  const [isMenu, setIsMenu] = useState(false);
 
   const login = async () => {
     if (!user) {
@@ -70,10 +72,25 @@ const Header = () => {
               className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-2xl cursor-pointer rounded-full"
               onClick={login}
             />
-            <div className="w-40 bg-gray-50 shadow-xl rounded-lg absolute flex flex-col top-12 right-0">
-              <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base">New Item<MdAdd /></p>
-              <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base">Logout<MdLogout /></p>
-            </div>
+            {
+              isMenu && (
+                <div className="w-40 bg-gray-50 shadow-xl rounded-lg absolute flex flex-col top-12 right-0">
+                  {
+                    user && user.email === "ditterraquion23@gmail.com" && (
+                      <Link to={'/createItem'}>
+                        <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base">New Item<MdAdd /></p>
+                      </Link>
+                    )
+                  }
+
+                  {
+                    (user && user.email) && (
+                      <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base">Logout<MdLogout /></p>
+                    )
+                  }
+                </div>
+              )
+            }
           </div>
         </div>
       </div>
