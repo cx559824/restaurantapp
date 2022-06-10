@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useReducer } from "react";
+/* eslint-disable react/prop-types */
+import React, { createContext, useContext, useReducer } from 'react';
 
 export const StateContext = createContext();
 

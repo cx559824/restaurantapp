@@ -1,9 +1,9 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { CreateContainer, Header, MainContainer } from "./components";
-import { AnimatePresence } from "framer-motion";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { CreateContainer, Header, MainContainer } from './components';
 
-const App = () => {
+function App() {
   return (
     <AnimatePresence>
       <div className="w-screen h-auto flex flex-col bg-primary">
@@ -17,6 +17,6 @@ const App = () => {
       </div>
     </AnimatePresence>
   );
-};
+}
 
 export default App;
